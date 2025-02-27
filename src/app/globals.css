@@ -1,24 +1,44 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #0069AC;
+  --color-secondary: #FFB700;
+  --color-danger: #DF4B24;
+  --color-graybase: #1F1A17;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-mono: 'Roboto Mono', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  line-height: 32px;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.container {
+  @apply max-w-[800px] px-4;
+}
+
+.center-children-horizontally {
+  @apply justify-center flex;
 }
