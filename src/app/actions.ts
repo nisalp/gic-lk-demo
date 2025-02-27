@@ -1,6 +1,7 @@
 'use server'
 
 import OpenAI from 'openai'
+import { track } from '@vercel/analytics';
 import { Client as ElasticClient } from '@elastic/elasticsearch'
 
 const ElasticCredentials =
@@ -108,6 +109,10 @@ export async function runSearch(
   if (!searchQuery) return { message: null };
   console.log(searchQuery)
 
+  track('Search Query', {
+    query: searchQuery as string,
+  })
+  
   const res = await searchDocs(searchQuery.toString())
 
   // mutate data

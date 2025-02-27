@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from "@vercel/analytics/react"
 
 import './globals.css'
 
@@ -33,6 +34,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         </header>
         <main>{children}</main>
         <footer className="bg-graybase text-white h-[100px]"></footer>
+        <Analytics />
       </body>
     </html>
   )
