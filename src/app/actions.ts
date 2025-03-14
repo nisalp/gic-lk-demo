@@ -45,7 +45,9 @@ async function searchDocs(query: string): Promise<string | null> {
       doc._source
         ? {
             rewrittenTitle: doc._source.rewrittenTitle,
-            url: doc._source.slug ? `/post/${doc._source.slug}` : "",
+            url: doc._source.slug
+              ? `https://gic-lk-demo.vercel.app//post/${doc._source.slug}`
+              : "",
             audience: doc._source.audience,
             category: doc._source.category,
             tags: doc._source.tags,
@@ -68,10 +70,6 @@ async function searchDocs(query: string): Promise<string | null> {
         content: `
         Filter the documents relavent to the original question. Try to answer the question by referring to the search results. Do not try to answer questions directly. 
         Just direct the user towards resources. 
-        
-        <Important>
-          Render href values exactly as mentioned in the \`url\` field. Do not modify.
-        </Important>
         
         If you cannot find relevant resources that can answer the question, please mention that.
 
