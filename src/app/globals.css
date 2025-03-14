@@ -1,16 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-
 @theme {
-  --color-primary: #0069AC;
-  --color-secondary: #FFB700;
-  --color-danger: #DF4B24;
-  --color-graybase: #1F1A17;
+  --color-primary: #0069ac;
+  --color-secondary: #ffb700;
+  --color-danger: #df4b24;
+  --color-graybase: #1f1a17;
 }
 
 :root {
-  --font-mono: 'Roboto Mono', monospace;
+  --font-mono: "Roboto Mono", monospace;
 }
 
 * {
@@ -36,7 +35,7 @@ body {
 }
 
 .container {
-  @apply max-w-[800px] px-4;
+  @apply max-w-[1000px] px-4;
 }
 
 .center-children-horizontally {

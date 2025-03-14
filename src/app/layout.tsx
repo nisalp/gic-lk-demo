@@ -1,15 +1,15 @@
-import React from 'react'
-import { Analytics } from "@vercel/analytics/react"
+import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 
-import './globals.css'
+import "./globals.css";
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Sri Lankan Government Information Center',
-}
+  description: "A blank template using Payload in a Next.js app.",
+  title: "Sri Lankan Government Information Center",
+};
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
+  const { children } = props;
 
   return (
     <html lang="en">
@@ -18,10 +18,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           <div className="container py-2 flex flex-row justify-between items-center">
             <div>
               <h5 className="mb-0 pb-0 text-white">
-                Call{' '}
+                Call{" "}
                 <a href="tel:1919" className="text-secondary font-bold">
                   1919
-                </a>{' '}
+                </a>{" "}
                 for further assistance
               </h5>
             </div>
@@ -37,5 +37,5 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

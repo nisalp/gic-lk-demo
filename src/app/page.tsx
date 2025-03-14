@@ -1,25 +1,26 @@
-'use client'
+"use client";
 
-import React, { useActionState, useState } from 'react'
-import Image from 'next/image'
-import Form from 'next/form'
+import React, { useActionState, useState } from "react";
+import Image from "next/image";
+import Form from "next/form";
 
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-import { MarkdownSkeleton } from '../components/shared/MarkdownSkeleton'
+import { MarkdownSkeleton } from "../components/shared/MarkdownSkeleton";
 
-import { runSearch } from './actions'
+import { runSearch } from "./actions";
 
 const initialState = {
   message: null as string | null,
-} as const
+} as const;
 
-export default function HomePage() {const [state, formAction, pending] = useActionState<typeof initialState, FormData>(
-    runSearch,
-    initialState
-  )
-  const [searchQuery, setSearchQuery] = useState('')
+export default function HomePage() {
+  const [state, formAction, pending] = useActionState<
+    typeof initialState,
+    FormData
+  >(runSearch, initialState);
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div className="content">
@@ -36,7 +37,8 @@ export default function HomePage() {const [state, formAction, pending] = useActi
             Welcome to the Sri Lankan Government Information Center
           </h1>
           <h2 className="text-2xl font-normal">
-            You can find information about services provided by the Sri Lankan government here
+            You can find information about services provided by the Sri Lankan
+            government here
           </h2>
         </div>
       </div>
@@ -56,7 +58,7 @@ export default function HomePage() {const [state, formAction, pending] = useActi
                 className="bg-primary text-white px-2 py-2 hover:to-blue-900 outline-2 flex"
                 disabled={!searchQuery || searchQuery.length < 3}
               >
-                {pending ? 'Searching...' : 'Search'}
+                {pending ? "Searching..." : "Search"}
               </button>
             </Form>
           </div>
@@ -65,12 +67,14 @@ export default function HomePage() {const [state, formAction, pending] = useActi
               <MarkdownSkeleton />
             ) : (
               <div className="prose prose-slate prose-a:text-primary max-w-none prose-p:mt-1 prose-p:mb-1 prose-ol:mt-2 prose-ol:mb-2 prose-ul:mt-2 prose-ul:mb-2">
-                <Markdown remarkPlugins={[remarkGfm]}>{state?.message?.toString()}</Markdown>
+                <Markdown remarkPlugins={[remarkGfm]}>
+                  {state?.message?.toString()}
+                </Markdown>
               </div>
             )}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
