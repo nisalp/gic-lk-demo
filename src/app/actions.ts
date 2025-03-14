@@ -70,7 +70,7 @@ async function searchDocs(query: string): Promise<string | null> {
         Just direct the user towards resources. 
         
         <Important>
-          If you find relative URLs provided as context, render links as relative URLs. Don't add any hosts to the URLs.
+          Render href values exactly as mentioned in the \`url\` field. Do not modify.
         </Important>
         
         If you cannot find relevant resources that can answer the question, please mention that.
