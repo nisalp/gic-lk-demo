@@ -36,10 +36,7 @@ export default function HomePage() {
           <h1 className="text-4xl font-bold">
             Welcome to the Sri Lankan Government Information Center
           </h1>
-          <h2 className="text-2xl font-normal">
-            You can find information about services provided by the Sri Lankan
-            government here
-          </h2>
+          <h2 className="text-2xl font-normal">What do you need help with?</h2>
         </div>
       </div>
       <div className="center-children-horizontally">
