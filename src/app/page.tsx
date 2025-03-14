@@ -47,7 +47,7 @@ export default function HomePage() {
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search for services"
+                placeholder="Ask your question"
                 name="searchQuery"
                 className="outline-2 text-xl px-4 py-2 flex-1 outline-graybase focus:outline-primary"
               />
