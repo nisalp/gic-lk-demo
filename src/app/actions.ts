@@ -59,7 +59,7 @@ async function searchDocs(query: string): Promise<string | null> {
   console.log(parsedResults);
 
   const finalFilter = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     temperature: 0,
     max_tokens: 4000,
     messages: [
