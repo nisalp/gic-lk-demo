@@ -6,6 +6,11 @@ import { Client as ElasticClient } from "@elastic/elasticsearch";
 
 import { DocumentPost } from "@/types/post";
 
+const isDev = process.env.NODE_ENV === "development";
+const HostURL = isDev
+  ? "https://localhost:3001"
+  : "https://gic-lk-demo.vercel.app/";
+
 const ElasticCredentials =
   process.env.ELASTICSEARCH_USERNAME && process.env.ELASTICSEARCH_PASSWORD
     ? {
@@ -45,9 +50,7 @@ async function searchDocs(query: string): Promise<string | null> {
       doc._source
         ? {
             rewrittenTitle: doc._source.rewrittenTitle,
-            url: doc._source.slug
-              ? `https://gic-lk-demo.vercel.app//post/${doc._source.slug}`
-              : "",
+            url: doc._source.slug ? `${HostURL}/post/${doc._source.slug}` : "",
             audience: doc._source.audience,
             category: doc._source.category,
             tags: doc._source.tags,
