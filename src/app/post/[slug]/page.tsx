@@ -45,7 +45,7 @@ export default async function SinglePostPage({
       <div className="center-children-horizontally">
         <div className="container flex flex-col gap-4 pt-4 pb-8">
           <div className="grid grid-cols-5">
-            <div className="col-span-3">
+            <div className="col-span-5">
               <div>
                 <span className="font-semibold text-primary">
                   {post.category}
